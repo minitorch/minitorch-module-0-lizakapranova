@@ -31,15 +31,13 @@ class Module:
 
     def train(self) -> None:
         """Set the mode of this module and all descendent modules to `train`."""
-        self.training = True
-        for module in self.modules():
-            module.train()
+        # TODO: Implement for Task 0.4.
+        raise NotImplementedError("Need to implement for Task 0.4")
 
     def eval(self) -> None:
         """Set the mode of this module and all descendent modules to `eval`."""
-        self.training = False
-        for module in self.modules():
-            module.eval()
+        # TODO: Implement for Task 0.4.
+        raise NotImplementedError("Need to implement for Task 0.4")
 
     def named_parameters(self) -> Sequence[Tuple[str, Parameter]]:
         """Collect all the parameters of this module and its descendents.
@@ -49,23 +47,13 @@ class Module:
             The name and `Parameter` of each ancestor parameter.
 
         """
-        named_parameters = []
-        for k, v in self.__dict__["_parameters"].items():
-            named_parameters.append((k, v))
-        for k, v in self.__dict__["_modules"].items():
-            module_params = v.named_parameters()
-            named_parameters.extend(
-                [(k + "." + name, parameter) for name, parameter in module_params]
-            )
-        return named_parameters
+        # TODO: Implement for Task 0.4.
+        raise NotImplementedError("Need to implement for Task 0.4")
 
     def parameters(self) -> Sequence[Parameter]:
         """Enumerate over all the parameters of this module and its descendents."""
-        m: Dict[str, Parameter] = self.__dict__["_parameters"]
-        params_list = list(m.values())
-        for module in self.modules():
-            params_list.extend(module.parameters())
-        return params_list
+        # TODO: Implement for Task 0.4.
+        raise NotImplementedError("Need to implement for Task 0.4")
 
     def add_parameter(self, k: str, v: Any) -> Parameter:
         """Manually add a parameter. Useful helper for scalar parameters.
