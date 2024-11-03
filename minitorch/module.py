@@ -54,7 +54,9 @@ class Module:
             named_parameters.append((k, v))
         for k, v in self.__dict__["_modules"].items():
             module_params = v.named_parameters()
-            named_parameters.extend([(k + '.' + name, parameter) for name, parameter in module_params])
+            named_parameters.extend(
+                [(k + "." + name, parameter) for name, parameter in module_params]
+            )
         return named_parameters
 
     def parameters(self) -> Sequence[Parameter]:
