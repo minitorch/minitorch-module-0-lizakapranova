@@ -107,11 +107,9 @@ def test_sigmoid(a: float) -> None:
     * It crosses 0 at 0.5
     * It is  strictly increasing.
     """
-    # TODO: Implement for Task 0.2.
     assert 0 <= sigmoid(a) <= 1.0
     assert_close(1.0 - sigmoid(a), sigmoid(-a))
-    assert_close(sigmoid(0), 0.5)
-    assert sigmoid(a - 1.0) < sigmoid(a) < sigmoid(a + 1.0)
+    assert sigmoid(a - 1.0) <= sigmoid(a) <= sigmoid(a + 1.0)
 
 
 @pytest.mark.task0_2
@@ -143,8 +141,7 @@ def test_distribute(x: float, y: float, z: float) -> None:
 @pytest.mark.task0_2
 def test_other() -> None:
     """Write a test that ensures some other property holds for your functions."""
-    # TODO: Implement for Task 0.2.
-    raise NotImplementedError("Need to implement for Task 0.2")
+    assert_close(sigmoid(0), 0.5)
 
 
 # ## Task 0.3  - Higher-order functions

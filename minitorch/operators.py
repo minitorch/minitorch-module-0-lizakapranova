@@ -64,7 +64,7 @@ def log(num: float) -> float:
 
 def exp(num: float) -> float:
     """Calculate exponent function"""
-    return math.exp(num)
+    return float(math.exp(num))
 
 
 def inv(num: float) -> float:
